@@ -63,35 +63,33 @@ Notes:
 
 Featured visuals:
 
-![Streamlit Dashboard](Images/Screenshot%202025-08-19%20191204.png)
-
-![Global Map Example](Images/download.png)
 
 ### Media Gallery (from `Images/`)
 All attached images are listed here for quick reference.
 
-![download (1).png](Images/download%20(1).png)
-![download (2).png](Images/download%20(2).png)
-![download (3).png](Images/download%20(3).png)
-![download (4).png](Images/download%20(4).png)
-![download (5).png](Images/download%20(5).png)
-![download (6).png](Images/download%20(6).png)
-![download (7).png](Images/download%20(7).png)
-![download (8).png](Images/download%20(8).png)
-![download (9).png](Images/download%20(9).png)
-![download (10).png](Images/download%20(10).png)
-![download (11).png](Images/download%20(11).png)
-![download (12).png](Images/download%20(12).png)
-![download (13).png](Images/download%20(13).png)
-![download (14).png](Images/download%20(14).png)
-![download (15).png](Images/download%20(15).png)
-![download.png](Images/download.png)
-![download.png1.png](Images/download.png1.png)
-![Screenshot 2025-08-19 171359.png](Images/Screenshot%202025-08-19%20171359.png)
-![Screenshot 2025-08-19 171422.png](Images/Screenshot%202025-08-19%20171422.png)
-![Screenshot 2025-08-19 171511.png](Images/Screenshot%202025-08-19%20171511.png)
-![Screenshot 2025-08-19 171550.png](Images/Screenshot%202025-08-19%20171550.png)
-![Screenshot 2025-08-19 191204.png](Images/Screenshot%202025-08-19%20191204.png)
+<img width="1088" height="937" alt="Image" src="https://github.com/user-attachments/assets/d91cc033-59a4-4814-af5a-60ace196d9b7" />
+<img width="790" height="580" alt="Image" src="https://github.com/user-attachments/assets/d2a67f44-1361-48d6-90a2-30c4f36c7ed3" />
+<img width="765" height="579" alt="Image" src="https://github.com/user-attachments/assets/7ad8ed2c-706e-4b70-a191-1c666842efc3" />
+<img width="1325" height="547" alt="Image" src="https://github.com/user-attachments/assets/d012f1f7-9dd5-4e49-b770-c15e792cab9f" />
+<img width="776" height="684" alt="Image" src="https://github.com/user-attachments/assets/948efdca-5182-4fc5-aaab-423982b21694" />
+https://github.com/user-attachments/assets/fb9f8140-3044-4ab3-b6fc-3f8d9561617e
+<img width="1212" height="447" alt="Image" src="https://github.com/user-attachments/assets/7444017b-8595-4a8b-a552-3d6d761d5dac" />
+<img width="1102" height="411" alt="Image" src="https://github.com/user-attachments/assets/8c6d9b99-c353-432b-953b-89c578144714" />
+<img width="1211" height="452" alt="Image" src="https://github.com/user-attachments/assets/1104e44c-611f-4181-a0fe-b3465a3906ed" />
+<img width="1227" height="778" alt="Image" src="https://github.com/user-attachments/assets/b03c557d-f5cc-44c7-b0cc-7951f9091be4" />
+<img width="1657" height="418" alt="Image" src="https://github.com/user-attachments/assets/59aa7c52-7fdb-43f3-838c-84bce4efa31b" />
+<img width="1022" height="553" alt="Image" src="https://github.com/user-attachments/assets/b57894ef-d656-404a-b423-3408121b8281" />
+<img width="1000" height="553" alt="Image" src="https://github.com/user-attachments/assets/bb962a34-a723-43a3-b61b-1a53dfbdde1b" />
+<img width="1621" height="711" alt="Image" src="https://github.com/user-attachments/assets/709c0c35-8c49-41c0-9df7-965e69edaa04" />
+<img width="1472" height="630" alt="Image" src="https://github.com/user-attachments/assets/75353d83-266c-4449-a2d8-135cf742e397" />
+<img width="1472" height="630" alt="Image" src="https://github.com/user-attachments/assets/69dadc88-68f6-47b5-b61b-2404ac5e7098" />
+<img width="1589" height="790" alt="Image" src="https://github.com/user-attachments/assets/49b36fc6-b62f-48ef-a5fe-bb79270019c8" />
+<img width="1043" height="706" alt="Image" src="https://github.com/user-attachments/assets/53c8334a-e022-4b09-8fd8-43e029b408a7" />
+<img width="1163" height="706" alt="Image" src="https://github.com/user-attachments/assets/7b434e92-f297-4de8-9755-6d00a0a15662" />
+<img width="1617" height="706" alt="Image" src="https://github.com/user-attachments/assets/cdda0209-2671-4488-8ec8-cbaa7726e49d" />
+<img width="790" height="604" alt="Image" src="https://github.com/user-attachments/assets/06db9156-53df-4ced-8630-6aaf9e96172f" />
+<img width="765" height="598" alt="Image" src="https://github.com/user-attachments/assets/d5ff80f9-f495-40e6-889d-dadda206cf76" />
+<img width="996" height="573" alt="Image" src="https://github.com/user-attachments/assets/51160238-ef78-4f83-a834-9ce0fb3951d1" />
 
 Video (if supported by your README viewer): `Images/Recording 2025-08-19 171624.mp4`
 
@@ -99,5 +97,6 @@ Video (if supported by your README viewer): `Images/Recording 2025-08-19 171624.
 - Natural Earth for country boundaries.
 - Kaggle community for the "Global Weather Repository" dataset.
 - The PM Accelerator for inspiring the applied product mindset behind this work.
+
 
 
