@@ -7,6 +7,10 @@ This project delivers an end-to-end data science workflow to analyze the Kaggle 
 
 https://github.com/user-attachments/assets/e808d5cc-90b9-43e5-ac1a-ff5df9c38f59
 
+
+https://github.com/user-attachments/assets/1c3c54fc-9026-4553-a467-6cb2223decdb
+
+
 ### Key Features
 - **Interactive Global Maps**: Choropleth maps for country-level metrics, including average temperature, PM2.5 air quality (log scale), and a composite Climate Risk Index.
 - **City-Specific Analysis**: An interactive sidebar to select a city and explore dedicated tabs for forecast, air quality correlation, and seasonal climate patterns.
@@ -99,6 +103,7 @@ Video (if supported by your README viewer): `Images/Recording 2025-08-19 171624.
 - Natural Earth for country boundaries.
 - Kaggle community for the "Global Weather Repository" dataset.
 - The PM Accelerator for inspiring the applied product mindset behind this work.
+
 
 
 
