@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e293b">
+    <title>Weather Forecasting - Code Demo | {{Shehab Mohamed}}</title>
+    
+    <!-- CDN Libraries for Enhanced Styling and Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #1e293b;
+            --accent-teal: #0d9488;
+            --accent-coral: #f97316;
+            --neutral-light: #f8fafc;
+            --neutral-dark: #374151;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--neutral-light) 0%, #e2e8f0 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #334155 100%);
+        }
+        
+        .method-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-teal);
+        }
+        
+        .method-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .figure-container {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+        
+        .figure-container:hover {
+            transform: scale(1.02);
+        }
+        
+        .figure-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .section-header {
+            color: var(--primary-navy);
+            border-bottom: 3px solid var(--accent-teal);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, var(--accent-coral) 0%, #ea580c 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+        }
+        
+        .cta-btn {
+            background: linear-gradient(135deg, var(--accent-teal) 0%, #0f766e 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+        }
+        
+        .collapsible {
+            cursor: pointer;
+            background: var(--primary-navy);
+            color: white;
+            padding: 1rem;
+            border: none;
+            width: 100%;
+            text-align: left;
+            border-radius: 0.5rem 0.5rem 0 0;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .collapsible-content {
+            background: white;
+            border-radius: 0 0 0.5rem 0.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .collapsible-content.active {
+            max-height: 800px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="hero-gradient text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <i class="fas fa-cloud-sun-rain text-yellow-400 mr-4"></i>
+                    Weather Forecasting Code Demo
+                </h1>
+                <p class="text-xl md:text-2xl mb-6 text-gray-200">
+                    Advanced Climate Analytics & Machine Learning Pipeline
+                </p>
+                <p class="text-lg text-gray-300 mb-8">
+                    Comprehensive analysis of global weather patterns using ensemble forecasting models, 
+                    anomaly detection, and environmental correlation studies.
+                </p>
+                
+                <!-- PM Accelerator Mission Box -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 mb-6">
+                    <h3 class="text-lg font-semibold mb-2 flex items-center">
+                        <i class="fas fa-rocket mr-2 text-orange-400"></i>PM Accelerator Mission
+                    </h3>
+                    <p class="text-gray-200">
+                        "To empower the next generation of product leaders with the practical skills, 
+                        mentorship, and community needed to accelerate their careers."
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <span class="bg-teal-600 px-4 py-2 rounded-full text-sm font-medium">
+                        <i class="fas fa-chart-line mr-2"></i>Time Series Analysis
+                    </span>
+                    <span class="bg-orange-600 px-4 py-2 rounded-full text-sm font-medium">
+                        <i class="fas fa-brain mr-2"></i>Machine Learning
+                    </span>
+                    <span class="bg-blue-600 px-4 py-2 rounded-full text-sm font-medium">
+                        <i class="fas fa-globe mr-2"></i>Geospatial Analytics
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Visuals Section -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold section-header">Core Analysis Results</h2>
+        
+        <!-- Key Figures Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Global Temperature Trends -->
+            <div class="figure-container">
+                <img src="https://page.gensparksite.com/v1/base64_upload/40b1226ed6ffd29d3496c26c43e5414a" 
+                     alt="Global Average Temperature Daily and 30-Day Rolling Mean">
+                <div class="p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Fig. 1 — Global Temperature Trends</h4>
+                    <p class="text-sm text-gray-600">Daily temperature variations with smoothed 30-day rolling averages revealing seasonal patterns and climate dynamics.</p>
+                </div>
+            </div>
+            
+            <!-- Forecast Performance -->
+            <div class="figure-container">
+                <img src="https://page.gensparksite.com/v1/base64_upload/fa137ad2d65ffb80de0b317e4d57c503" 
+                     alt="London Temperature Forecast Actual vs Predicted">
+                <div class="p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Fig. 2 — Model Performance</h4>
+                    <p class="text-sm text-gray-600">Ensemble vs XGBoost predictions showing superior accuracy (RMSE: 2.53 vs 2.04) for temperature forecasting.</p>
+                </div>
+            </div>
+            
+            <!-- Feature Importance -->
+            <div class="figure-container">
+                <img src="https://page.gensparksite.com/v1/base64_upload/d3b1f7bb5232a8894174bdfd395f1581" 
+                     alt="Global Feature Importance using SHAP values">
+                <div class="p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Fig. 3 — Feature Importance</h4>
+                    <p class="text-sm text-gray-600">SHAP analysis revealing lag_1 and rolling_mean_7 as dominant predictive features in the forecasting model.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Analysis Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <!-- Seasonal Patterns -->
+            <div class="figure-container">
+                <img src="https://page.gensparksite.com/v1/base64_upload/019323261e81885eee76abf4d27fea00" 
+                     alt="Temperature Distribution by Season">
+                <div class="p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Fig. 4 — Seasonal Distribution</h4>
+                    <p class="text-sm text-gray-600">Box plots showing temperature distribution across seasons with outlier detection for anomaly identification.</p>
+                </div>
+            </div>
+            
+            <!-- Air Quality Correlation -->
+            <div class="figure-container">
+                <img src="https://page.gensparksite.com/v1/base64_upload/812532bff3744673508369c13edde928" 
+                     alt="Global Average PM2.5 Air Quality trends">
+                <div class="p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Fig. 5 — Air Quality Trends</h4>
+                    <p class="text-sm text-gray-600">PM2.5 concentration patterns revealing environmental quality fluctuations and correlation opportunities with temperature.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Geospatial Analysis -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Global Temperature Map -->
+            <div class="figure-container">
+                <img src="https://page.gensparksite.com/v1/base64_upload/169138857e2f74b892567bfca38bb72d" 
+                     alt="Global Distribution of Average Temperature">
+                <div class="p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Fig. 6 — Global Temperature Distribution</h4>
+                    <p class="text-sm text-gray-600">Choropleth visualization showing regional temperature variations with clear climate zone delineation.</p>
+                </div>
+            </div>
+            
+            <!-- Climate Risk Hotspots -->
+            <div class="figure-container">
+                <img src="https://page.gensparksite.com/v1/base64_upload/f1935b35b5dac3f2e71892210aae0d07" 
+                     alt="Global Climate Risk Hotspots">
+                <div class="p-4">
+                    <h4 class="font-semibent text-gray-800 mb-2">Fig. 7 — Climate Risk Assessment</h4>
+                    <p class="text-sm text-gray-600">Composite risk index highlighting vulnerable regions combining temperature, precipitation, and air quality metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold section-header">Methodology Overview</h2>
+            
+            <!-- Method Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <!-- Data Preprocessing Card -->
+                <div class="method-card p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-database text-2xl text-teal-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Data Cleaning & Preprocessing</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-teal-500 mr-2"></i>Missing value imputation using forward-fill and interpolation</li>
+                        <li><i class="fas fa-check text-teal-500 mr-2"></i>Outlier detection using IQR and Z-score methods</li>
+                        <li><i class="fas fa-check text-teal-500 mr-2"></i>Feature engineering: lag variables, rolling means (7-day, 30-day)</li>
+                        <li><i class="fas fa-check text-teal-500 mr-2"></i>Temporal feature extraction: week, month, seasonal indicators</li>
+                        <li><i class="fas fa-check text-teal-500 mr-2"></i>Data normalization and scaling for model compatibility</li>
+                    </ul>
+                </div>
+                
+                <!-- Modeling Approach Card -->
+                <div class="method-card p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-2xl text-orange-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Ensemble Modeling</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i>XGBoost: Gradient boosting for non-linear patterns</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i>LSTM: Deep learning for temporal dependencies</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i>ARIMA: Classical time series modeling</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i>Weighted ensemble combining all models</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i>Cross-validation with time-series splits</li>
+                    </ul>
+                </div>
+                
+                <!-- Anomaly Detection Card -->
+                <div class="method-card p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-2xl text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Anomaly Detection</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Isolation Forest for multivariate anomalies</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Statistical threshold methods (3-sigma rule)</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Seasonal decomposition for trend anomalies</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Climate event identification and categorization</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Visualization of detected outliers in context</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature Importance Card -->
+                <div class="method-card p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-bar text-2xl text-blue-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Feature Importance Analysis</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>SHAP (SHapley Additive exPlanations) values</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Permutation importance for model-agnostic analysis</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Correlation analysis between weather parameters</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Feature interaction detection and visualization</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Temporal importance patterns across seasons</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Advanced Analytics -->
+            <div class="bg-gray-50 rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-microscope text-purple-600 mr-3"></i>Advanced Analytics Highlights
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-medium text-gray-700 mb-2">Climate Analysis</h4>
+                        <p class="text-gray-600">Long-term pattern recognition across geographic regions with seasonal trend decomposition and climate zone classification.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-700 mb-2">Environmental Impact</h4>
+                        <p class="text-gray-600">Cross-correlation analysis between air quality (PM2.5) and temperature patterns revealing pollution-climate relationships.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-700 mb-2">Spatial Analysis</h4>
+                        <p class="text-gray-600">Geographic pattern analysis with choropleth mapping and continental temperature distribution comparisons.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reproduction Steps -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold section-header">Reproduction Steps</h2>
+        
+        <div class="bg-white rounded-lg shadow-sm">
+            <button class="collapsible" onclick="toggleCollapsible(this)">
+                <span><i class="fas fa-code mr-2"></i>Implementation Guide</span>
+                <i class="fas fa-chevron-down transition-transform"></i>
+            </button>
+            <div class="collapsible-content">
+                <div class="p-6">
+                    <h4 class="font-semibold text-gray-800 mb-4">Environment Setup & Data Preparation</h4>
+                    <div class="code-block mb-6">
+# 1. Clone the repository and set up environment
+git clone {{REPO_LINK}}
+cd PMAccelerator_Task_Weather
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+# 2. Download and prepare data
+# Place GlobalWeatherRepository.csv in the root directory
+# Ensure Natural Earth shapefiles are available for mapping
+                    </div>
+                    
+                    <h4 class="font-semibold text-gray-800 mb-4">Core Analysis Pipeline</h4>
+                    <div class="code-block mb-6">
+# 3. Run the main analysis notebook
+jupyter notebook PMAccelerator_Task_.ipynb
+
+# Key analysis steps include:
+# - Data cleaning and preprocessing
+# - Exploratory data analysis with visualizations  
+# - Feature engineering and lag variable creation
+# - Model training (XGBoost, LSTM, ARIMA, Ensemble)
+# - Model evaluation and comparison
+# - SHAP analysis for interpretability
+                    </div>
+                    
+                    <h4 class="font-semibold text-gray-800 mb-4">Interactive Dashboard</h4>
+                    <div class="code-block mb-6">
+# 4. Launch the Streamlit dashboard
+streamlit run app.py
+
+# The dashboard provides:
+# - Interactive global maps (temperature, PM2.5, climate risk)
+# - City-specific analysis with forecasting
+# - Air quality correlation studies
+# - Seasonal pattern exploration
+                    </div>
+                    
+                    <h4 class="font-semibold text-gray-800 mb-4">Model Training & Evaluation</h4>
+                    <div class="code-block">
+# 5. Key evaluation metrics used
+# - RMSE (Root Mean Square Error)
+# - MAE (Mean Absolute Error) 
+# - MAPE (Mean Absolute Percentage Error)
+# - R² Score for goodness of fit
+# - Cross-validation with temporal splits
+
+# Model performance comparison:
+# XGBoost RMSE: 2.04
+# Ensemble RMSE: 2.53
+# LSTM RMSE: 7.35
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="bg-gradient-to-r from-slate-800 to-slate-900 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">
+                <i class="fas fa-download mr-3"></i>Project Resources
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Download Buttons -->
+                <a href="#" class="download-btn justify-center">
+                    <i class="fas fa-file-pdf"></i>
+                    Report PDF
+                    <span class="text-xs opacity-75">{{REPORT_PDF_NAME}}</span>
+                </a>
+                
+                <a href="#" class="download-btn justify-center">
+                    <i class="fas fa-book"></i>
+                    Analysis Notebook
+                    <span class="text-xs opacity-75">{{NOTEBOOK_NAME}}</span>
+                </a>
+                
+                <a href="#" class="download-btn justify-center">
+                    <i class="fas fa-database"></i>
+                    Processed Data
+                    <span class="text-xs opacity-75">CSV & Artifacts</span>
+                </a>
+                
+                <a href="#" class="download-btn justify-center">
+                    <i class="fas fa-cog"></i>
+                    Trained Models
+                    <span class="text-xs opacity-75">PKL Files</span>
+                </a>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href= https://github.com/Shehab-Hegab/PMAccelerator_Task_Weather class="cta-btn">
+                    <i class="fab fa-github"></i>
+                    View Repository
+                </a>
+                
+                <a href= shehabsedm@gmail.com class="cta-btn">
+                    <i class="fas fa-envelope"></i>
+                    Contact Author
+                </a>
+                
+                <a href= file:///F:/Datascience/PMAccelerator_Task/Final.html class="cta-btn">
+                    <i class="fas fa-presentation"></i>
+                    Full Presentation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold section-header">Interactive Demo</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <div class="aspect-w-16 aspect-h-9 mb-4">
+                <video controls playsinline webkit-playsinline class="w-full rounded-lg" style="max-height: 500px;">
+                    <source src="https://page.gensparksite.com/get_upload_url/0ccd753394b80204e2cd971eac57f4e88ab773443134469d25e0c71c77bbd291/default/dfe58732-74d8-4a26-8f26-f15f42a46143" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="text-gray-600 text-center">
+                <i class="fas fa-play-circle mr-2"></i>
+                Interactive Streamlit dashboard demonstration showcasing real-time weather analysis and forecasting capabilities.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer with Documentation -->
+    <footer class="bg-gray-50 py-12">
+        <div class="container mx-auto px-6">
+            <!-- PM Accelerator Mission Reminder -->
+            <div class="bg-white rounded-lg p-6 mb-8 border-l-4 border-teal-500">
+                <h3 class="text-lg font-semibold mb-2 flex items-center">
+                    <i class="fas fa-rocket mr-2 text-orange-500"></i>PM Accelerator Mission
+                </h3>
+                <p class="text-gray-700">
+                    "To empower the next generation of product leaders with the practical skills, 
+                    mentorship, and community needed to accelerate their careers."
+                </p>
+            </div>
+            
+            <!-- Documentation Section -->
+            <div class="bg-white rounded-lg shadow-sm">
+                <button class="collapsible" onclick="toggleCollapsible(this)">
+                    <span><i class="fas fa-book mr-2"></i>Documentation & Setup Guide</span>
+                    <i class="fas fa-chevron-down transition-transform"></i>
+                </button>
+                <div class="collapsible-content">
+                    <div class="p-6 space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">How to Replace Placeholders</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li><strong>{{NAME:Shehab Mohamed}}</strong> </li>
+                                <li><strong>{{Github_REPO_https://github.com/Shehab-Hegab/PMAccelerator_Task_Weather}}</strong>  </li>
+                                <li><strong>{{EMAIL_shehabsedm@gmail.com}}</strong> </li>
+
+                                <li><strong>{{NOTEBOOK_PMAccelerator_Task_.ipynb}}</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">Adding or Removing Images</h4>
+                            <p class="text-sm text-gray-600 mb-2">To modify the image gallery:</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>1. Update image URLs in the figure-container divs</li>
+                                <li>2. Modify alt text and captions accordingly</li>
+                                <li>3. Adjust grid layout classes if changing number of images</li>
+                                <li>4. Ensure all images are properly optimized for web</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">Hosting on GitHub Pages</h4>
+                            <div class="code-block text-xs">
+# 1. Push HTML file to your repository
+git add code_demo.html
+git commit -m "Add weather forecasting code demo"
+git push origin main
+
+# 2. Enable GitHub Pages in repository settings
+# 3. Select source: Deploy from a branch → main → / (root)
+# 4. Access at: https://username.github.io/repository-name/code_demo.html
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">License</h4>
+                            <p class="text-sm text-gray-600">
+                                This project is licensed under the MIT License. See LICENSE file for details.
+                                Feel free to use, modify, and distribute as per the license terms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Attribution -->
+            <div class="text-center mt-8 pt-8 border-t border-gray-200">
+                <p class="text-gray-500 text-sm">
+                    © 2025 {{Shehab Mohamed}} | Weather Trend Forecasting Analysis | 
+                    Built with <i class="fas fa-heart text-red-500"></i> for PM Accelerator
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Collapsible functionality
+        function toggleCollapsible(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.fa-chevron-down');
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Enhanced hover effects for method cards
+        const methodCards = document.querySelectorAll('.method-card');
+        methodCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = '0 12px 28px -3px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 10px 25px -3px rgba(0, 0, 0, 0.1)';
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.method-card, .figure-container').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Copy functionality for code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            const copyButton = document.createElement('button');
+            copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+            copyButton.className = 'absolute top-2 right-2 bg-gray-600 hover:bg-gray-500 text-white px-2 py-1 rounded text-xs transition-colors';
+            copyButton.style.position = 'absolute';
+            
+            block.style.position = 'relative';
+            block.appendChild(copyButton);
+            
+            copyButton.addEventListener('click', () => {
+                const text = block.textContent.replace(copyButton.textContent, '').trim();
+                navigator.clipboard.writeText(text).then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
