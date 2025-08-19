@@ -5,6 +5,8 @@
 ### Project Overview
 This project delivers an end-to-end data science workflow to analyze the Kaggle "Global Weather Repository" dataset, build forecasting models, and present insights in an interactive Streamlit dashboard. It spans the full lifecycle: data ingestion, cleaning, exploratory data analysis (EDA), geospatial analytics, modeling, evaluation, and deployment in a user-friendly web app.
 
+https://github.com/user-attachments/assets/e808d5cc-90b9-43e5-ac1a-ff5df9c38f59
+
 ### Key Features
 - **Interactive Global Maps**: Choropleth maps for country-level metrics, including average temperature, PM2.5 air quality (log scale), and a composite Climate Risk Index.
 - **City-Specific Analysis**: An interactive sidebar to select a city and explore dedicated tabs for forecast, air quality correlation, and seasonal climate patterns.
@@ -97,6 +99,7 @@ Video (if supported by your README viewer): `Images/Recording 2025-08-19 171624.
 - Natural Earth for country boundaries.
 - Kaggle community for the "Global Weather Repository" dataset.
 - The PM Accelerator for inspiring the applied product mindset behind this work.
+
 
 
 
