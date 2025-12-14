@@ -73,6 +73,13 @@ Featured visuals:
 ### Media Gallery (from `Images/`)
 All attached images are listed here for quick reference.
 
+
+
+<img width="1857" height="995" alt="image" src="https://github.com/user-attachments/assets/cbd64208-81d8-4cff-af5a-0af14386d676" />
+<img width="1842" height="947" alt="image" src="https://github.com/user-attachments/assets/87f98108-e84c-4f7a-a4a3-83631151d854" />
+<img width="1852" height="997" alt="image" src="https://github.com/user-attachments/assets/00c026f1-7add-47ad-9398-bd1e4a787141" />
+
+
 <img width="1088" height="937" alt="Image" src="https://github.com/user-attachments/assets/d91cc033-59a4-4814-af5a-60ace196d9b7" />
 <img width="790" height="580" alt="Image" src="https://github.com/user-attachments/assets/d2a67f44-1361-48d6-90a2-30c4f36c7ed3" />
 <img width="765" height="579" alt="Image" src="https://github.com/user-attachments/assets/7ad8ed2c-706e-4b70-a191-1c666842efc3" />
@@ -103,6 +110,7 @@ Video (if supported by your README viewer): `Images/Recording 2025-08-19 171624.
 - Natural Earth for country boundaries.
 - Kaggle community for the "Global Weather Repository" dataset.
 - The PM Accelerator for inspiring the applied product mindset behind this work.
+
 
 
 
