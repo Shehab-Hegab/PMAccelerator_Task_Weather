@@ -79,10 +79,20 @@ All attached images are listed here for quick reference.
 <img width="1842" height="947" alt="image" src="https://github.com/user-attachments/assets/87f98108-e84c-4f7a-a4a3-83631151d854" />
 <img width="1852" height="997" alt="image" src="https://github.com/user-attachments/assets/00c026f1-7add-47ad-9398-bd1e4a787141" />
 <img width="1852" height="931" alt="image" src="https://github.com/user-attachments/assets/06a6e225-3c25-49aa-bc88-4e34d8ac8694" />
-
-
-
-
+<img width="1817" height="930" alt="image" src="https://github.com/user-attachments/assets/6ccc7bbd-a295-431a-ac24-f880a61a6e82" />
+<img width="1850" height="918" alt="image" src="https://github.com/user-attachments/assets/8b62e53b-df9a-44d7-8102-9cf4176ab949" />
+<img width="1776" height="486" alt="image" src="https://github.com/user-attachments/assets/d8b586bc-35a5-44ef-9dc7-4e4676618f58" />
+<img width="1767" height="877" alt="image" src="https://github.com/user-attachments/assets/45368b1e-0833-4a79-acff-da36939744ca" />
+<img width="1755" height="867" alt="image" src="https://github.com/user-attachments/assets/5ff6deee-976c-4f6b-bfb4-ad8da03e8e53" />
+<img width="1856" height="937" alt="image" src="https://github.com/user-attachments/assets/bbc82a2c-b822-4d6a-bd2b-1500a98ff9fd" />
+<img width="1803" height="875" alt="image" src="https://github.com/user-attachments/assets/031de7a6-bae9-42c0-bf45-dc6175b7ece4" />
+<img width="1778" height="610" alt="image" src="https://github.com/user-attachments/assets/15a449a0-941b-4a6a-936e-9f50526950b8" />
+<img width="1823" height="896" alt="image" src="https://github.com/user-attachments/assets/85420cb8-c94b-4337-acc9-539f36c1dac9" />
+<img width="1841" height="918" alt="image" src="https://github.com/user-attachments/assets/a9f8ec20-fd44-4c11-81bd-4d585592cf6a" />
+<img width="1742" height="632" alt="image" src="https://github.com/user-attachments/assets/6f4f3c06-0b62-49dd-bc1f-63a8988375e1" />
+<img width="1705" height="606" alt="image" src="https://github.com/user-attachments/assets/f104fd3c-001d-4cce-8336-345c21b2128c" />
+<img width="1847" height="923" alt="image" src="https://github.com/user-attachments/assets/cd5dfaa3-db9f-440c-b0f1-16a462dc3ff7" />
+<img width="1857" height="937" alt="image" src="https://github.com/user-attachments/assets/943eb818-111a-4118-91b2-b4f81458e625" />
 
 <img width="1088" height="937" alt="Image" src="https://github.com/user-attachments/assets/d91cc033-59a4-4814-af5a-60ace196d9b7" />
 <img width="790" height="580" alt="Image" src="https://github.com/user-attachments/assets/d2a67f44-1361-48d6-90a2-30c4f36c7ed3" />
@@ -114,6 +124,7 @@ Video (if supported by your README viewer): `Images/Recording 2025-08-19 171624.
 - Natural Earth for country boundaries.
 - Kaggle community for the "Global Weather Repository" dataset.
 - The PM Accelerator for inspiring the applied product mindset behind this work.
+
 
 
 
